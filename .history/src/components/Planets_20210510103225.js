@@ -26,11 +26,9 @@ const Planets = () => {
       {status === "loading" && <div>Loading</div>}
 
       {status === "success" && (
-        <>
-          <div>
+        <div>
           { resolvedData.results.map(planet => <Planet key={ planet.name } planet = { planet } />) }
-          </div>
-        </>
+        </div>
       )}
     </div>
   );

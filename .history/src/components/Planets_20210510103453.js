@@ -29,7 +29,7 @@ const Planets = () => {
         <>
           <div>
           { resolvedData.results.map(planet => <Planet key={ planet.name } planet = { planet } />) }
-          </div>
+        </div>
         </>
       )}
     </div>

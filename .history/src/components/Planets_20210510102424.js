@@ -11,10 +11,8 @@ let fetchPlanets = async (key, page) => {
 
 const Planets = () => {
   let [page, setPage] = useState(1)
-  let { resolvedData,
-        latestData,
-        status } = usePaginatedQuery(["planets", page], fetchPlanets);
-  
+  let { data, status } = usePaginatedQuery(["planets", page], fetchPlanets);
+  console.log(data);
 
   return (
     <div>
@@ -26,11 +24,9 @@ const Planets = () => {
       {status === "loading" && <div>Loading</div>}
 
       {status === "success" && (
-        <>
-          <div>
-          { resolvedData.results.map(planet => <Planet key={ planet.name } planet = { planet } />) }
-          </div>
-        </>
+        <div>
+          { data.results.map(planet => <Planet key={ planet.name } planet = { planet } />) }
+        </div>
       )}
     </div>
   );
