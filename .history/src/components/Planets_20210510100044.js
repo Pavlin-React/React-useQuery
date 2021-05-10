@@ -9,8 +9,8 @@ let fetchPlanets = async () => {
 
 const Planets = () => {
   let { data, status } = useQuery("planets", fetchPlanets, {
-    staleTime: 0,
-    cacheTime: 10
+    staleTime: 5000,
+    cach: 10
   });
   console.log(data);
 
